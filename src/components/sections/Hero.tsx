@@ -1,76 +1,79 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+
+const stats = [
+  { label: 'Avg. Launch Lift', value: '42%' },
+  { label: 'Client Retention', value: '96%' },
+  { label: 'Build Velocity', value: '2.4x' },
+];
+
+const sentence = 'Designed for modern brands that value trust, clarity, and velocity.';
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="top" className="relative px-4 pb-20 pt-36 sm:px-6 sm:pb-28 lg:pt-44">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-100 shadow-2xl shadow-cyan-950/20 backdrop-blur-xl">
-            <Sparkles className="size-4 text-cyan-300" />
-            Premium digital systems for ambitious teams
-          </div>
-          <h1 className="mt-8 max-w-4xl text-5xl font-semibold tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl">
-            Build a sharper brand presence for the next era of the web.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-            ZHPS blends high-end interface design, scalable React architecture, and subtle motion to create digital experiences that feel fast, trusted, and futuristic.
+    <section id="top" className="relative px-4 pb-20 pt-36 sm:px-6 lg:pt-44">
+      <motion.div
+        className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 lg:gap-10"
+        initial={reduceMotion ? false : 'hidden'}
+        animate={reduceMotion ? undefined : 'show'}
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.14 } } }}
+      >
+        <motion.div variants={{ hidden: { opacity: 0, y: 14 }, show: { opacity: 1, y: 0 } }} className="col-span-12 lg:col-span-7">
+          <p className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs tracking-[0.2em] text-slate-200/90 uppercase">
+            premium digital systems
           </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="#contact"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 shadow-2xl shadow-cyan-400/20 transition hover:-translate-y-0.5 hover:bg-white"
-            >
-              Start a project
-              <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+          <h1 className="mt-6 font-display text-5xl font-semibold leading-[0.95] tracking-[-0.04em] text-gold-gradient sm:text-6xl lg:text-7xl">
+            Luxury-grade web experiences with measurable business impact.
+          </h1>
+          <p className="mt-6 text-lg text-slate-300/90 sm:text-xl">
+            <span>{sentence}</span>
+            {!reduceMotion && (
+              <span className="ml-1 inline-block w-[0.55ch] align-[-0.08em] animate-caret text-gold-gradient">|</span>
+            )}
+          </p>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300/75">
+            We pair clear product storytelling with high-performance engineering and understated cinematic motion.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-4">
+            <a href="#top" className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(120deg,#f4d694,#d49a4b)] px-6 py-3 text-sm font-bold text-[#1a1304] transition hover:-translate-y-0.5">
+              Start your build
+              <ArrowRight className="size-4" />
             </a>
-            <a
-              href="#services"
-              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-xl transition hover:border-white/25 hover:bg-white/10"
-            >
-              Explore services
+            <a href="#top" className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white/95 transition hover:border-white/35 hover:bg-white/10">
+              View capabilities
             </a>
           </div>
-        </div>
-
-        <motion.div
-          className="relative mx-auto w-full max-w-lg rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 shadow-2xl shadow-cyan-950/30 backdrop-blur-2xl"
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.94, y: 30 }}
-          animate={reduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-5">
-            <div className="mb-6 flex items-center justify-between">
-              <div>
-                <p className="text-sm text-slate-400">Experience score</p>
-                <p className="text-3xl font-semibold text-white">98.7%</p>
-              </div>
-              <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-sm font-semibold text-emerald-300">Live</span>
-            </div>
-            <div className="space-y-3">
-              {['Brand velocity', 'Interface clarity', 'Conversion lift'].map((label, index) => (
-                <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                  <div className="mb-3 flex justify-between text-sm">
-                    <span className="text-slate-300">{label}</span>
-                    <span className="text-cyan-200">{88 + index * 4}%</span>
-                  </div>
-                  <div className="h-2 overflow-hidden rounded-full bg-white/10">
-                    <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-fuchsia-300"
-                      initial={reduceMotion ? false : { width: '20%' }}
-                      whileInView={reduceMotion ? undefined : { width: `${88 + index * 4}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.9, delay: index * 0.12 }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {stats.map((item, idx) => (
+              <motion.div key={item.label} variants={{ hidden: { opacity: 0, y: 14 }, show: { opacity: 1, y: 0 } }} transition={{ delay: idx * 0.05 }} className="glass rounded-2xl p-4">
+                <p className="text-2xl font-display text-gold-gradient">{item.value}</p>
+                <p className="mt-1 text-sm text-slate-300/80">{item.label}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
-      </div>
+
+        <motion.div variants={{ hidden: { opacity: 0, scale: 0.97, y: 16 }, show: { opacity: 1, scale: 1, y: 0 } }} className="relative col-span-12 min-h-[420px] lg:col-span-5">
+          <div className="absolute inset-x-8 top-12 h-44 rounded-full bg-[radial-gradient(circle,rgba(212,154,75,0.24),transparent_70%)] blur-3xl" />
+          <div className="absolute left-1/2 top-8 w-[85%] -translate-x-1/2 glass-strong animate-float rounded-3xl p-6">
+            <p className="text-xs uppercase tracking-[0.18em] text-slate-300/85">System architecture badge</p>
+            <p className="mt-3 font-display text-2xl text-white">Cinematic Interface Stack</p>
+            <p className="mt-2 text-sm text-slate-300/75">Design language, conversion UX, and performance-first frontend delivery.</p>
+          </div>
+
+          {['React + Motion', 'Headless CMS', 'Analytics layer'].map((chip, i) => (
+            <div
+              key={chip}
+              className="absolute left-1/2 top-40 -translate-x-1/2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs text-slate-200/85 animate-orbit"
+              style={{ animationDelay: `${i * -6}s` }}
+            >
+              {chip}
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
