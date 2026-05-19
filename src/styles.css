@@ -1,73 +1,52 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: Outfit, Manrope, ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   color-scheme: dark;
   font-family: var(--font-sans);
-  background: #020617;
+  --navy-950: #050814;
+  --navy-900: #0a1226;
+  --navy-800: #111d38;
+  --gold-300: #f4d694;
+  --gold-400: #eabf72;
+  --gold-500: #d49a4b;
+  --ice-100: #e5e9f5;
+  --glass: linear-gradient(140deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.03));
+  --glass-strong: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04));
+  background: var(--navy-950);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
+body { min-width: 320px; min-height: 100vh; margin: 0; overflow-x: hidden; background: var(--navy-950); color: var(--ice-100); }
+::selection { color: #050814; background: #f0cb87; }
 
-body {
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
-}
+@utility font-display { font-family: var(--font-display); }
+@utility glass { background-image: var(--glass); border: 1px solid rgba(255, 255, 255, 0.16); box-shadow: 0 20px 60px rgba(3, 6, 18, 0.45); backdrop-filter: blur(16px); }
+@utility glass-strong { background-image: var(--glass-strong); border: 1px solid rgba(255, 255, 255, 0.22); box-shadow: 0 32px 90px rgba(2, 6, 18, 0.58); backdrop-filter: blur(24px); }
+@utility text-gold-gradient { background-image: linear-gradient(108deg, var(--gold-300), var(--gold-500)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@utility cinematic-shell { background: linear-gradient(122deg, rgba(5, 8, 20, 0.76), rgba(10, 18, 38, 0.84)); }
 
-::selection {
-  color: #020617;
-  background: #67e8f9;
-}
+@utility animate-float { animation: float 12s cubic-bezier(0.33, 1, 0.68, 1) infinite; }
+@utility animate-orbit { animation: orbit 19s linear infinite; }
+@utility animate-drift { animation: drift 9s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+@utility animate-glow-shift { animation: glow-shift 15s ease-in-out infinite alternate; }
+@utility animate-atmo { animation: atmo 28s ease-in-out infinite alternate; }
+@utility animate-caret { animation: caret 1.05s steps(1) infinite; }
 
-@utility animate-pulse-slow {
-  animation: pulse-slow 9s ease-in-out infinite;
-}
-
-@utility animate-float {
-  animation: float 14s ease-in-out infinite;
-}
-
-@utility animate-float-delayed {
-  animation: float 16s ease-in-out infinite reverse;
-}
-
-@keyframes pulse-slow {
-  0%, 100% {
-    transform: translateX(-50%) scale(1);
-    opacity: 0.75;
-  }
-  50% {
-    transform: translateX(-50%) scale(1.12);
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(24px, -28px, 0) scale(1.08);
-  }
-}
+@keyframes float { 0%,100% { transform: translate3d(0,0,0) rotate(0deg);} 50% { transform: translate3d(0,-18px,0) rotate(0.25deg);} }
+@keyframes orbit { from { transform: rotate(0deg) translateX(128px) rotate(0deg);} to { transform: rotate(360deg) translateX(128px) rotate(-360deg);} }
+@keyframes drift { 0%,100% { transform: translate3d(0,0,0);} 50% { transform: translate3d(14px,-16px,0);} }
+@keyframes glow-shift { 0% { opacity: 0.35; transform: scale(0.94);} 100% { opacity: 0.6; transform: scale(1.06);} }
+@keyframes atmo { 0% { transform: translate3d(-2%, -2%, 0) scale(1);} 100% { transform: translate3d(2%, 2%, 0) scale(1.05);} }
+@keyframes caret { 0%, 49% { opacity: 1;} 50%,100% { opacity: 0;} }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
