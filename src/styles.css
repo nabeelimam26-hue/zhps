@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -31,20 +32,16 @@ body { min-width: 320px; min-height: 100vh; margin: 0; overflow-x: hidden; backg
 @utility glass { background-image: var(--glass); border: 1px solid rgba(255, 255, 255, 0.16); box-shadow: 0 20px 60px rgba(3, 6, 18, 0.45); backdrop-filter: blur(16px); }
 @utility glass-strong { background-image: var(--glass-strong); border: 1px solid rgba(255, 255, 255, 0.22); box-shadow: 0 32px 90px rgba(2, 6, 18, 0.58); backdrop-filter: blur(24px); }
 @utility text-gold-gradient { background-image: linear-gradient(108deg, var(--gold-300), var(--gold-500)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-@utility cinematic-shell { background: linear-gradient(122deg, rgba(5, 8, 20, 0.76), rgba(10, 18, 38, 0.84)); }
+@utility cinematic-shell { background: linear-gradient(122deg, rgba(5, 8, 20, 0.75), rgba(10, 18, 38, 0.8)); }
 
-@utility animate-float { animation: float 12s cubic-bezier(0.33, 1, 0.68, 1) infinite; }
-@utility animate-orbit { animation: orbit 19s linear infinite; }
-@utility animate-drift { animation: drift 9s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
-@utility animate-glow-shift { animation: glow-shift 15s ease-in-out infinite alternate; }
-@utility animate-atmo { animation: atmo 28s ease-in-out infinite alternate; }
+@utility animate-float { animation: float 13s ease-in-out infinite; }
+@utility animate-orbit { animation: orbit 18s linear infinite; }
+@utility animate-drift { animation: drift 7s ease-in-out infinite; }
 @utility animate-caret { animation: caret 1.05s steps(1) infinite; }
 
-@keyframes float { 0%,100% { transform: translate3d(0,0,0) rotate(0deg);} 50% { transform: translate3d(0,-18px,0) rotate(0.25deg);} }
-@keyframes orbit { from { transform: rotate(0deg) translateX(128px) rotate(0deg);} to { transform: rotate(360deg) translateX(128px) rotate(-360deg);} }
-@keyframes drift { 0%,100% { transform: translate3d(0,0,0);} 50% { transform: translate3d(14px,-16px,0);} }
-@keyframes glow-shift { 0% { opacity: 0.35; transform: scale(0.94);} 100% { opacity: 0.6; transform: scale(1.06);} }
-@keyframes atmo { 0% { transform: translate3d(-2%, -2%, 0) scale(1);} 100% { transform: translate3d(2%, 2%, 0) scale(1.05);} }
+@keyframes float { 0%,100% { transform: translate3d(0,0,0) rotate(0deg);} 50% { transform: translate3d(0,-16px,0) rotate(0.2deg);} }
+@keyframes orbit { from { transform: rotate(0deg) translateX(120px) rotate(0deg);} to { transform: rotate(360deg) translateX(120px) rotate(-360deg);} }
+@keyframes drift { 0%,100% { transform: translate3d(0,0,0);} 50% { transform: translate3d(8px,-12px,0);} }
 @keyframes caret { 0%, 49% { opacity: 1;} 50%,100% { opacity: 0;} }
 
 @media (prefers-reduced-motion: reduce) {
