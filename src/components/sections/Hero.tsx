@@ -11,6 +11,20 @@ const sentence = 'Designed for modern brands that value trust, clarity, and velo
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    if (reduceMotion) return;
+
+    const onMove = (event: MouseEvent) => {
+      const x = (event.clientX / window.innerWidth - 0.5) * 14;
+      const y = (event.clientY / window.innerHeight - 0.5) * 12;
+      setParallax({ x, y });
+    };
+
+    window.addEventListener('mousemove', onMove, { passive: true });
+    return () => window.removeEventListener('mousemove', onMove);
+  }, [reduceMotion]);
 
   return (
     <section id="top" className="relative px-4 pb-20 pt-36 sm:px-6 lg:pt-44">
