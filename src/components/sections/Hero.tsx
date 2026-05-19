@@ -37,11 +37,11 @@ export function Hero() {
             We pair clear product storytelling with high-performance engineering and understated cinematic motion.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <a href="#top" className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(120deg,#f4d694,#d49a4b)] px-6 py-3 text-sm font-bold text-[#1a1304] transition hover:-translate-y-0.5">
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(120deg,#f4d694,#d49a4b)] px-6 py-3 text-sm font-bold text-[#1a1304] transition hover:-translate-y-0.5">
               Start your build
               <ArrowRight className="size-4" />
             </a>
-            <a href="#top" className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white/95 transition hover:border-white/35 hover:bg-white/10">
+            <a href="#services" className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white/95 transition hover:border-white/35 hover:bg-white/10">
               View capabilities
             </a>
           </div>
