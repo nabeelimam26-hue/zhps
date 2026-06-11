@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  STAFF
+  STUDENT
+}
+
+enum NoticeCategory {
+  ACADEMIC
+  URGENT
+  EVENT
+  GENERAL
+}
+
+enum StudentStatus {
+  ACTIVE
+  ALUMNI
+  SUSPENDED
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      Role     @default(STUDENT)
+  notices   Notice[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([role])
+  @@index([name])
+}
+
+model Notice {
+  id        String         @id @default(cuid())
+  title     String
+  content   String
+  category  NoticeCategory @default(GENERAL)
+  fileUrl   String?
+  authorId  String
+  author    User           @relation(fields: [authorId], references: [id], onDelete: Restrict)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  @@index([category, createdAt])
+  @@index([authorId, createdAt])
+  @@index([createdAt])
+}
+
+model Student {
+  id            String        @id @default(cuid())
+  studentId     String        @unique
+  firstName     String
+  lastName      String
+  rollNumber    String
+  gradeLevel    String
+  section       String
+  email         String?       @unique
+  admissionDate DateTime
+  status        StudentStatus @default(ACTIVE)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@unique([gradeLevel, section, rollNumber])
+  @@index([lastName, firstName])
+  @@index([rollNumber])
+  @@index([gradeLevel, section])
+  @@index([status])
+}
