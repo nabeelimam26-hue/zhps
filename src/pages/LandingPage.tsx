@@ -12,7 +12,11 @@ export function LandingPage() {
       <Navbar />
       <main>
         <Hero />
+        <Services />
+        <Testimonials />
+        <Contact />
       </main>
+      <Footer />
     </>
   );
 }
