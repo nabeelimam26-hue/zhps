@@ -1,10 +1,6 @@
 import { AnimatedBackground } from '../components/layout/AnimatedBackground';
 import { Navbar } from '../components/layout/Navbar';
 import { Hero } from '../components/sections/Hero';
-import { Services } from '../components/sections/Services';
-import { Testimonials } from '../components/sections/Testimonials';
-import { Contact } from '../components/sections/Contact';
-import { Footer } from '../components/layout/Footer';
 import { useLenis } from '../hooks/useLenis';
 
 export function LandingPage() {
