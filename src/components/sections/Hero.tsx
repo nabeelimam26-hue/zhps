@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
 const stats = [
   { label: 'Avg. Launch Lift', value: '42%' },
@@ -10,8 +12,11 @@ const stats = [
 const sentence = 'Designed for modern brands that value trust, clarity, and velocity.';
 
 export function Hero() {
-  const reduceMotion = useReducedMotion();
-  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const reduceMotion = usePrefersReducedMotion();
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+  const parallaxX = useSpring(rawX, { stiffness: 90, damping: 24, mass: 0.35 });
+  const parallaxY = useSpring(rawY, { stiffness: 90, damping: 24, mass: 0.35 });
 
   useEffect(() => {
     if (reduceMotion) return;
@@ -19,12 +24,13 @@ export function Hero() {
     const onMove = (event: MouseEvent) => {
       const x = (event.clientX / window.innerWidth - 0.5) * 14;
       const y = (event.clientY / window.innerHeight - 0.5) * 12;
-      setParallax({ x, y });
+      rawX.set(x);
+      rawY.set(y);
     };
 
     window.addEventListener('mousemove', onMove, { passive: true });
     return () => window.removeEventListener('mousemove', onMove);
-  }, [reduceMotion]);
+  }, [rawX, rawY, reduceMotion]);
 
   return (
     <section id="top" className="relative px-4 pb-20 pt-36 sm:px-6 lg:pt-44">
@@ -69,7 +75,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <motion.div variants={{ hidden: { opacity: 0, scale: 0.97, y: 16 }, show: { opacity: 1, scale: 1, y: 0 } }} className="relative col-span-12 min-h-[420px] lg:col-span-5">
+        <motion.div variants={{ hidden: { opacity: 0, scale: 0.97, y: 16 }, show: { opacity: 1, scale: 1, y: 0 } }} style={reduceMotion ? undefined : { x: parallaxX, y: parallaxY }} className="relative col-span-12 min-h-[420px] lg:col-span-5">
           <div className="absolute inset-x-8 top-12 h-44 rounded-full bg-[radial-gradient(circle,rgba(212,154,75,0.24),transparent_70%)] blur-3xl" />
           <div className="absolute left-1/2 top-8 w-[85%] -translate-x-1/2 glass-strong animate-float rounded-3xl p-6">
             <p className="text-xs uppercase tracking-[0.18em] text-slate-300/85">System architecture badge</p>
