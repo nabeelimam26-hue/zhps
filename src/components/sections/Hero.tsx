@@ -98,7 +98,6 @@ export function Hero() {
             </div>
           ))}
         </motion.div>
-      </div>
     </section>
   );
 }
