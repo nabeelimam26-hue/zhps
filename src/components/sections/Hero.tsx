@@ -32,11 +32,6 @@ export function Hero() {
     return () => window.removeEventListener('mousemove', onMove);
   }, [rawX, rawY, reduceMotion]);
 
-  async function onSubmit(formData: FormData) {
-    const ok = await loginAsAdmin(String(formData.get('username') ?? ''), String(formData.get('password') ?? ''));
-    setError(ok ? '' : 'Invalid admin credentials. Use authorized admin account.');
-  }
-
   return (
     <section id="top" className="relative px-4 pb-20 pt-36 sm:px-6 lg:pt-44">
       <motion.div
@@ -98,7 +93,7 @@ export function Hero() {
             </div>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
