@@ -8,8 +8,8 @@ import {
   Award, 
   BookOpen, 
   Globe,
-  Users,
-  Star
+  Users
+  // Star removed - was never used
 } from 'lucide-react';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
@@ -178,7 +178,7 @@ export function About() {
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="grid grid-cols-2 gap-4 md:grid-cols-4"
         >
-          {features.map((item, idx) => {
+          {features.map((item) => {
             const Icon = item.icon;
             return (
               <motion.div

@@ -8,9 +8,7 @@ import {
   Phone,
   MapPin,
   ArrowRight,
-  Download,
-  Users,
-  BookOpen
+  Download
 } from 'lucide-react';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
