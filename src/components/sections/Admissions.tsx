@@ -13,25 +13,25 @@ import {
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
 const steps = [
-  { number: '01', title: 'Registration', description: 'Fill out the online registration form with student details.', icon: FileText },
-  { number: '02', title: 'Document Verification', description: 'Submit required documents for verification.', icon: CheckCircle },
-  { number: '03', title: 'Interaction/Assessment', description: 'Student interaction and academic assessment.', icon: Calendar },
-  { number: '04', title: 'Admission Confirmation', description: 'Fee payment and seat confirmation.', icon: Clock },
+  { number: '01', title: 'Online Registration', description: 'Fill out the online registration form with student and parent details.', icon: FileText },
+  { number: '02', title: 'Document Submission', description: 'Submit required documents including birth certificate and transfer certificate.', icon: CheckCircle },
+  { number: '03', title: 'Assessment & Interview', description: 'Student assessment and parent interaction with school management.', icon: Calendar },
+  { number: '04', title: 'Admission Confirmation', description: 'Fee payment and seat confirmation to finalize admission.', icon: Clock },
 ];
 
 const importantDates = [
-  { label: 'Application Start', date: 'Jan 15, 2026' },
-  { label: 'Application Deadline', date: 'Mar 15, 2026' },
-  { label: 'Assessment', date: 'Mar 20-25, 2026' },
-  { label: 'Results', date: 'Apr 1, 2026' },
+  { label: 'Application Start', date: 'Mar 25, 2026' },
+  { label: 'Application Deadline', date: 'Mar 30, 2026' },
+  { label: 'Assessment Dates', date: 'Mar 25-30, 2026' },
+  { label: 'Session Starts', date: 'Jun 1, 2026' },
 ];
 
 const documents = [
-  'Birth Certificate',
-  'Transfer Certificate',
+  'Birth Certificate (Original & Copy)',
+  'Transfer Certificate (if applicable)',
   'Aadhar Card (Student & Parent)',
   'Passport Size Photos (4)',
-  'Previous Academic Records',
+  'Previous Academic Records & Report Cards',
 ];
 
 export function Admissions() {
@@ -55,10 +55,10 @@ export function Admissions() {
           </span>
           <h2 className="mt-6 font-display text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
             Join Our{' '}
-            <span className="text-gold-gradient">Family</span>
+            <span className="text-gold-gradient">School Family</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300/75">
-            Admissions open for classes Pre-Primary to 8th. Limited seats available.
+            Admissions open for classes Pre-Primary to 8th. Limited seats available. Apply now to secure your child's seat.
           </p>
         </motion.div>
 
@@ -146,8 +146,8 @@ export function Admissions() {
             <div className="mt-4 space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="size-4 text-amber-400" />
-                <a href="tel:+1234567890" className="text-white hover:text-amber-400 transition">
-                  +1 (234) 567-8900
+                <a href="tel:+916120123456" className="text-white hover:text-amber-400 transition">
+                  +91 612 012 3456
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -176,7 +176,7 @@ export function Admissions() {
           className="mt-12 text-center"
         >
           <a
-            href="#"
+            href="#contact"
             className="inline-flex items-center gap-3 rounded-full bg-[linear-gradient(120deg,#f4d694,#d49a4b)] px-8 py-4 text-sm font-bold text-[#1a1304] transition hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/25"
           >
             <Download className="size-5" />

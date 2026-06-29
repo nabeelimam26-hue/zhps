@@ -41,14 +41,14 @@ export function Contact() {
           className="mb-16 text-center"
         >
           <p className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs tracking-[0.2em] text-slate-200/90 uppercase">
-            get in touch
+            Get in Touch
           </p>
           <h2 className="mt-6 font-display text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
-            Let's create something{' '}
-            <span className="text-gold-gradient">extraordinary</span>
+            Connect with{' '}
+            <span className="text-gold-gradient">Our School</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300/75">
-            Ready to elevate your digital presence? We'd love to hear about your vision.
+            Have questions about admissions or our programs? We'd love to hear from you. Reach out to us anytime.
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ export function Contact() {
           >
             <div className="glass-strong rounded-3xl p-8">
               <h3 className="mb-6 font-display text-2xl font-semibold text-white">
-                Connect with us
+                Contact Information
               </h3>
               
               <div className="space-y-4">
@@ -71,9 +71,10 @@ export function Contact() {
                   <Mail className="mt-1 size-5 shrink-0 text-gold-gradient" />
                   <div>
                     <p className="text-sm font-medium text-slate-300/60">Email</p>
-                    <a href="mailto:hello@yourstudio.com" className="text-white transition hover:text-gold-gradient">
-                      hello@yourstudio.com
+                    <a href="mailto:info@drzakirschool.edu" className="text-white transition hover:text-gold-gradient">
+                      info@drzakirschool.edu
                     </a>
+                    <p className="mt-1 text-xs text-slate-300/50">Admissions: admissions@drzakirschool.edu</p>
                   </div>
                 </div>
                 
@@ -81,9 +82,10 @@ export function Contact() {
                   <Phone className="mt-1 size-5 shrink-0 text-gold-gradient" />
                   <div>
                     <p className="text-sm font-medium text-slate-300/60">Phone</p>
-                    <a href="tel:+1234567890" className="text-white transition hover:text-gold-gradient">
-                      +1 (234) 567-890
+                    <a href="tel:+916120123456" className="text-white transition hover:text-gold-gradient">
+                      +91 612 012 3456
                     </a>
+                    <p className="mt-1 text-xs text-slate-300/50">+91 612 012 3457 (Admissions)</p>
                   </div>
                 </div>
                 
@@ -91,7 +93,8 @@ export function Contact() {
                   <MapPin className="mt-1 size-5 shrink-0 text-gold-gradient" />
                   <div>
                     <p className="text-sm font-medium text-slate-300/60">Location</p>
-                    <p className="text-white">San Francisco, CA</p>
+                    <p className="text-white">Dr. Zakir Hussain Middle School</p>
+                    <p className="text-sm text-slate-300/75">Patna, Bihar, India</p>
                   </div>
                 </div>
               </div>
@@ -100,22 +103,23 @@ export function Contact() {
             {/* Working hours */}
             <div className="glass-strong rounded-3xl p-8">
               <h4 className="mb-4 font-display text-lg font-semibold text-white">
-                Working Hours
+                School Hours
               </h4>
               <div className="space-y-2 text-sm text-slate-300/75">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
-                  <span className="text-white">9:00 AM - 6:00 PM</span>
+                  <span className="text-white">8:00 AM - 3:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Saturday</span>
-                  <span className="text-white">10:00 AM - 4:00 PM</span>
+                  <span className="text-white">8:00 AM - 1:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
                   <span className="text-white/50">Closed</span>
                 </div>
               </div>
+              <p className="mt-4 text-xs text-slate-300/50">Admissions office open during school hours</p>
             </div>
           </motion.div>
 
@@ -140,7 +144,7 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-300/40 transition focus:border-gold-gradient/50 focus:outline-none focus:ring-2 focus:ring-gold-gradient/20"
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                   />
                 </div>
                 
@@ -156,7 +160,7 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-300/40 transition focus:border-gold-gradient/50 focus:outline-none focus:ring-2 focus:ring-gold-gradient/20"
-                    placeholder="you@example.com"
+                    placeholder="your@email.com"
                   />
                 </div>
                 
@@ -172,7 +176,7 @@ export function Contact() {
                     required
                     rows={4}
                     className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-300/40 transition focus:border-gold-gradient/50 focus:outline-none focus:ring-2 focus:ring-gold-gradient/20"
-                    placeholder="Tell us about your project..."
+                    placeholder="Tell us about your inquiry..."
                   />
                 </div>
               </div>

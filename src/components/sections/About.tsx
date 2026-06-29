@@ -8,8 +8,8 @@ import {
   Award, 
   BookOpen, 
   Globe,
-  Users
-  // Star removed - was never used
+  Users,
+  Cpu
 } from 'lucide-react';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
@@ -35,17 +35,19 @@ const visionPoints = [
 ];
 
 const milestones = [
-  { year: '1998', event: 'School Founded', icon: School },
-  { year: '2005', event: 'CBSE Affiliation', icon: Award },
-  { year: '2015', event: 'Smart Classroom Initiative', icon: BookOpen },
-  { year: '2023', event: 'Digital Learning Hub', icon: Globe },
+  { year: '1975', event: 'School Founded with 50 students', icon: School },
+  { year: '2000', event: 'Received CBSE Affiliation', icon: Award },
+  { year: '2010', event: 'Expanded to Middle School', icon: BookOpen },
+  { year: '2015', event: 'Launched Smart Classroom Initiative', icon: Cpu },
+  { year: '2020', event: 'Introduced Digital Learning Platform', icon: Globe },
+  { year: '2025', event: 'Achieved 98% CBSE Results', icon: Award },
 ];
 
 const features = [
-  { label: 'CBSE Curriculum', value: 'National Standard', icon: BookOpen },
-  { label: 'Qualified Teachers', value: '45+', icon: Users },
+  { label: 'CBSE Curriculum', value: 'Pre-Primary to 8th', icon: BookOpen },
+  { label: 'Expert Faculty', value: '32+', icon: Users },
   { label: 'Student-Teacher Ratio', value: '25:1', icon: Users },
-  { label: 'Campus Area', value: '5 Acres', icon: School },
+  { label: 'Campus Area', value: '3 Acres', icon: School },
 ];
 
 export function About() {
@@ -84,11 +86,11 @@ export function About() {
             About Our School
           </span>
           <h2 className="mt-6 font-display text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
-            Excellence in{' '}
-            <span className="text-gold-gradient">Education</span>
+            A Legacy of{' '}
+            <span className="text-gold-gradient">Excellence</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300/75">
-            DR ZAKIR MIDDLE SCHOOL has been nurturing young minds with quality education and character building since 1998.
+            DR ZAKIR HUSSAIN MIDDLE SCHOOL has been nurturing young minds with quality education and character building in Patna since 1975.
           </p>
         </motion.div>
 

@@ -7,23 +7,44 @@ const showcaseItems = [
   {
     id: 1,
     title: 'Main Campus',
-    description: 'State-of-the-art infrastructure with modern facilities',
+    description: '3 acres of secure, lush green campus designed for holistic growth',
     image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=600&fit=crop',
-    alt: 'School Building'
+    alt: 'Main Campus'
   },
   {
     id: 2,
     title: 'Smart Classrooms',
-    description: 'Digital learning environments for enhanced education',
+    description: 'Digitally equipped learning spaces with interactive tools',
     image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=600&fit=crop',
     alt: 'Smart Classroom'
   },
   {
     id: 3,
-    title: 'Sports Excellence',
-    description: 'World-class facilities for holistic development',
+    title: 'Science Laboratory',
+    description: 'Modern equipment for hands-on scientific exploration',
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=600&fit=crop',
+    alt: 'Science Lab'
+  },
+  {
+    id: 4,
+    title: 'Digital Library',
+    description: 'A vast collection of books and digital resources for students',
+    image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&h=600&fit=crop',
+    alt: 'Library'
+  },
+  {
+    id: 5,
+    title: 'Computer Lab',
+    description: 'High-speed internet and modern systems for IT literacy',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=600&fit=crop',
+    alt: 'Computer Lab'
+  },
+  {
+    id: 6,
+    title: 'Sports Ground',
+    description: 'Extensive facilities for outdoor sports and physical training',
     image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&h=600&fit=crop',
-    alt: 'Sports Facilities'
+    alt: 'Sports Ground'
   },
 ];
 
@@ -47,11 +68,11 @@ export function Showcase() {
             Our Campus
           </span>
           <h2 className="mt-6 font-display text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
-            Explore Our{' '}
-            <span className="text-gold-gradient">School</span>
+            World-Class{' '}
+            <span className="text-gold-gradient">Facilities</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300/75">
-            Discover the learning environment that shapes future leaders.
+            Explore the infrastructure that provides our students with a premium learning environment.
           </p>
         </motion.div>
 

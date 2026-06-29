@@ -4,24 +4,24 @@ import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
 const testimonials = [
   {
-    name: 'Victoria Chen',
-    role: 'CEO, Luxe Brands',
-    content: 'The cinematic interface transformed our digital presence. Our conversion rates increased by 47% within the first month.',
-    avatar: 'VC',
+    name: 'Rajesh Kumar',
+    role: 'Parent, Class 7',
+    content: 'Dr. Zakir Hussain School has transformed my son\'s academic performance. The teachers are dedicated and the facilities are world-class. Highly satisfied!',
+    avatar: 'RK',
     rating: 5
   },
   {
-    name: 'Marcus Rodriguez',
-    role: 'Head of Digital, Premium Group',
-    content: 'Exceptional attention to detail and performance. The motion design adds a layer of sophistication that sets us apart.',
-    avatar: 'MR',
+    name: 'Priya Sharma',
+    role: 'Parent, Class 5',
+    content: 'The holistic approach to education here is remarkable. My daughter has developed confidence and leadership skills beyond academics. Truly grateful.',
+    avatar: 'PS',
     rating: 5
   },
   {
-    name: 'Sophia Laurent',
-    role: 'Creative Director, Atelier',
-    content: 'Finally, a digital partner that understands both design excellence and business impact. Highly recommended.',
-    avatar: 'SL',
+    name: 'Aditya Verma',
+    role: 'Student, Class 8',
+    content: 'The smart classrooms and digital learning platform make studying engaging. The sports facilities are excellent, and I\'ve made wonderful friends here.',
+    avatar: 'AV',
     rating: 5
   }
 ];
@@ -43,11 +43,11 @@ export function Testimonials() {
           className="mb-16 text-center"
         >
           <p className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs tracking-[0.2em] text-slate-200/90 uppercase">
-            client voices
+            Parent & Student Voices
           </p>
           <h2 className="mt-6 font-display text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
             Trusted by{' '}
-            <span className="text-gold-gradient">leading brands</span>
+            <span className="text-gold-gradient">Families & Students</span>
           </h2>
         </motion.div>
 
@@ -95,16 +95,16 @@ export function Testimonials() {
           className="mt-16 flex flex-wrap justify-center gap-8 border-t border-white/10 pt-12"
         >
           <div className="text-center">
-            <p className="font-display text-3xl font-bold text-gold-gradient">96%</p>
-            <p className="text-sm text-slate-300/60">Client Retention Rate</p>
+            <p className="font-display text-3xl font-bold text-gold-gradient">850+</p>
+            <p className="text-sm text-slate-300/60">Students Enrolled</p>
           </div>
           <div className="text-center">
-            <p className="font-display text-3xl font-bold text-gold-gradient">4.9★</p>
-            <p className="text-sm text-slate-300/60">Average Client Rating</p>
+            <p className="font-display text-3xl font-bold text-gold-gradient">98.72%</p>
+            <p className="text-sm text-slate-300/60">CBSE Result</p>
           </div>
           <div className="text-center">
-            <p className="font-display text-3xl font-bold text-gold-gradient">200+</p>
-            <p className="text-sm text-slate-300/60">Projects Delivered</p>
+            <p className="font-display text-3xl font-bold text-gold-gradient">50 Years</p>
+            <p className="text-sm text-slate-300/60">Legacy of Excellence</p>
           </div>
         </motion.div>
       </div>

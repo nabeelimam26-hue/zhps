@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { 
-  Twitter, 
+  BookOpen, 
   Linkedin, 
-  Github, 
+  Facebook, 
   Youtube,
   ArrowUp,
-  Sparkles 
+  Mail,
+  Phone,
+  MapPin
 } from 'lucide-react';
 
 export function Footer() {
@@ -20,22 +22,41 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2">
-              <Sparkles className="size-5 text-gold-gradient" />
+              <BookOpen className="size-5 text-gold-gradient" />
               <span className="font-display text-xl font-semibold text-white">
-                Studio<span className="text-gold-gradient">X</span>
+                Dr. Zakir<span className="text-gold-gradient"> Hussain</span>
               </span>
             </div>
             <p className="mt-3 max-w-sm text-sm text-slate-300/60">
-              Creating premium digital experiences for brands that value trust, clarity, and velocity.
+              Empowering young minds with quality education, character building, and holistic development since 1975.
             </p>
+            
+            <div className="mt-4 space-y-2 text-sm text-slate-300/60">
+              <div className="flex items-center gap-2">
+                <MapPin className="size-4 text-gold-gradient" />
+                <span>Patna, Bihar, India</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="size-4 text-gold-gradient" />
+                <a href="tel:+916120123456" className="transition hover:text-gold-gradient">
+                  +91 612 012 3456
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="size-4 text-gold-gradient" />
+                <a href="mailto:info@drzakirschool.edu" className="transition hover:text-gold-gradient">
+                  info@drzakirschool.edu
+                </a>
+              </div>
+            </div>
             
             <div className="mt-4 flex space-x-4">
               <a 
                 href="#" 
                 className="rounded-full border border-white/10 p-2 text-slate-300/60 transition hover:border-gold-gradient/50 hover:text-gold-gradient"
-                aria-label="Twitter"
+                aria-label="Facebook"
               >
-                <Twitter className="size-4" />
+                <Facebook className="size-4" />
               </a>
               <a 
                 href="#" 
@@ -47,13 +68,6 @@ export function Footer() {
               <a 
                 href="#" 
                 className="rounded-full border border-white/10 p-2 text-slate-300/60 transition hover:border-gold-gradient/50 hover:text-gold-gradient"
-                aria-label="GitHub"
-              >
-                <Github className="size-4" />
-              </a>
-              <a 
-                href="#" 
-                className="rounded-full border border-white/10 p-2 text-slate-300/60 transition hover:border-gold-gradient/50 hover:text-gold-gradient"
                 aria-label="YouTube"
               >
                 <Youtube className="size-4" />
@@ -61,15 +75,15 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Links */}
+          {/* Quick Links */}
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.1em] text-slate-300/60">
-              Services
+              Quick Links
             </h4>
             <ul className="space-y-2 text-sm">
-              {['UX/UI Design', 'Frontend Engineering', 'Growth Strategy'].map((item) => (
+              {['About', 'Services', 'Admissions'].map((item) => (
                 <li key={item}>
-                  <a href="#services" className="text-slate-300/60 transition hover:text-gold-gradient">
+                  <a href={`#${item.toLowerCase()}`} className="text-slate-300/60 transition hover:text-gold-gradient">
                     {item}
                   </a>
                 </li>
@@ -77,12 +91,13 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Information */}
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.1em] text-slate-300/60">
-              Company
+              Information
             </h4>
             <ul className="space-y-2 text-sm">
-              {['About', 'Work', 'Contact'].map((item) => (
+              {['Contact', 'Showcase', 'Testimonials'].map((item) => (
                 <li key={item}>
                   <a href={`#${item.toLowerCase()}`} className="text-slate-300/60 transition hover:text-gold-gradient">
                     {item}
@@ -96,7 +111,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-sm text-slate-300/40">
-            © {new Date().getFullYear()} StudioX. All rights reserved.
+            © {new Date().getFullYear()} Dr. Zakir Hussain Middle School. All rights reserved. | CBSE Affiliated
           </p>
           
           <motion.button
