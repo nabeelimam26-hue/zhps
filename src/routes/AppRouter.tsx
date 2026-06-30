@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { AdminPage } from '../pages/AdminPage';
-import { LandingPage } from '../pages/LandingPage';
+import { LandingPage3D } from '../pages/LandingPage3D';
 import { useAuth } from '../auth';
 
 function ProtectedAdmin() {
@@ -9,7 +9,7 @@ function ProtectedAdmin() {
 }
 
 const router = createBrowserRouter([
-  { path: '/', element: <LandingPage /> },
+  { path: '/', element: <LandingPage3D /> },
   { path: '/admin', element: <ProtectedAdmin /> },
 ]);
 
